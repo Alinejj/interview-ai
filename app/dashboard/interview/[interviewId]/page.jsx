@@ -7,6 +7,7 @@ import { useParams } from 'next/navigation';
 import Webcam from 'react-webcam';
 import { Lightbulb, WebcamIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 function Interview() {
     const params = useParams(); 
@@ -72,7 +73,9 @@ function Interview() {
         )}
         </div>
         <div className='flex justify-end items-end'>
+            <Link href={'/dashboard/interview/'+params.interviewId+'/start'}>
         <Button className='mt-10 '>Start the Interview</Button>
+        </Link>
         </div>
         
          
