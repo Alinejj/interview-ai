@@ -11,6 +11,7 @@ import {
 import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
+import PropTypes from 'prop-types'
 
 function Feedback({params}) {
 
@@ -57,11 +58,16 @@ function Feedback({params}) {
         ))}
 
 
-        <Button onClick={()=>router.replace('/dashboard')}>Home</Button>
+        <Button onClick={()=>router.replace('/dashboard')} className='mt-2'>Home</Button>
 
 
     </div>
   )
+}
+Feedback.propTypes = {
+    params: PropTypes.shape({
+        interviewId: PropTypes.string.isRequired,
+    }).isRequired,
 }
 
 export default Feedback
